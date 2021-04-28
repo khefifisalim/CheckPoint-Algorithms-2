@@ -1,0 +1,25 @@
+ALGORITHM Prob2-S2 
+VAR
+    set1,set2,set,index : ARRAY_OF INTEGER[50];
+    Htable : HASH_TABLE <INTEGER , INTEGER>;
+    count : INTEGER := 1;
+    sum : INTEGER := 0;
+    i,j : INTEGER;
+BEGIN
+    set = concat (set1,set2);
+    FOR i FROM 0 TO set.length -1 DO
+        IF (Htable.lookup(set[i] = TRUE)) THEN
+            count := Htable.get(set[i]) + 1 ;
+        ELSE
+            index.push (set[i]);
+        END_IF
+    END_FOR
+    FOR j FROM 0 TO index.length -1 DO
+        IF (Htable.get(index[i]) <> 1) THEN
+            sum := sum + index[i];
+        ELSE
+            RETURN
+        END_IF
+    END_FOR
+    Write ("The somme of the same elements is :", sum);
+END
